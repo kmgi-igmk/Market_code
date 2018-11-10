@@ -1,0 +1,42 @@
+<div class="page-container">
+  <div class="new_product_wrap">
+    <h1>新規出品</h1>
+    <%= form_for [:users, @product], html: { class: 'p-product c-generalForm_form', multipart: true } do |f| %>
+      <!-- 商品名 -->
+      <div class="name_wrap">
+        <%= f.label :name, "商品名" %><br>
+        <%= f.text_field :name, placeholder: "商品の名前"%>
+      </div>
+      <!-- 説明文 -->
+      <div class="textarea_wrap">
+        <%= f.label :description, "説明" %><br>
+        <%= f.text_area :description, placeholder: "どんな商品なのか詳細を入力してください。" %>
+      </div>
+      <!-- カテゴリ（DBから引っ張ってくる）-->
+      <div class="category_wrap">
+        <%= f.label :category_id, "カテゴリー" %><br>
+        <%= f.collection_select :category_id, Category.all, :id, :name, :include_blank => "選択してください。"  %>
+      </div>
+      <!-- 値段 -->
+      <div class="price_wrap">
+        <%= f.label :price, "値段" %><br>
+        <%= f.text_field :price, placeholder: "0" %>
+      </div>
+      <!-- ファイル選択ボタン -->
+      <div class="file_wrap">
+        <%= f.label :image1, "画像1枚目" %>
+        <%= f.file_field :image1, id: :product_image1 %><br>
+        <%= f.label :image2, "画像2枚目" %>
+        <%= f.file_field :image2, id: :preview_2 %><br>
+        <%= f.label :image3, "画像3枚目" %>
+        <%= f.file_field :image, id: :preview_3 %><br>
+      </div>
+      <%= f.hidden_field :status, :value => "selling" %>
+      <!-- 送信ボタン -->
+      <div class="btn_wrap">
+        <%= f.submit "出品する" %>
+      </div>
+    <% end %>
+  </div>
+  <%= render partial: 'my_menu' %>
+</div>

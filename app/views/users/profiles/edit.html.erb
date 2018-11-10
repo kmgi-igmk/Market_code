@@ -1,0 +1,28 @@
+<div class="page-container">
+  <div class="profile-edit-container">
+    <%= form_for(@user, url: {controller: :profiles, action: :update}) do |f| %>
+      <div class="user_name_wrap">
+        <%= f.label :name, "名前" %><br>
+        <%= f.text_field :name, placeholder: "名前を入力して下さい。" %>
+      </div>
+      <div class="user_email_wrap">
+        <%= f.label :email, "メールアドレス" %><br>
+        <%= f.text_field :email, placeholder: "メールアドレスを入力して下さい。" %>
+      </div>
+      <div class="user_textarea_wrap">
+        <%= f.label :profile, "コメント" %><br>
+        <%= f.text_area :profile, placeholder: "自己紹介など" %>
+      </div>
+      <div class="user_file_wrap">
+        <label>プロフィール画像</label><br>
+        <div class="file_wrap">
+          <%= f.file_field :image %>
+        </div>
+      </div>
+      <div class="user_btn_wrap">
+        <%= f.submit "編集を保存する" %>
+      </div>
+    <% end %>
+  </div>
+  <%= render partial: 'my_menu' %>
+</div>

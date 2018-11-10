@@ -1,0 +1,442 @@
+//新規登録ページ(sign_up.html.erb)
+.page-container {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 75%;
+  .sign-up-container {
+    width: 45%;
+    background-color: white;
+    padding: 20px;
+    margin-right: 10px;
+    .errors {
+      text-align: center;
+      color: red;
+      li {
+        padding-bottom: 5px;
+      }
+    }
+    input[type="text"], [type="email"], [type="password"], [type="password_confirmation"] {
+      width: 100%;
+    }
+    label {
+      font-weight: bold;
+    }
+    .field {
+      margin-bottom: 15px;
+    }
+    .user_btn_wrap {
+      text-align: center;
+      input[type="submit"] {
+        background-color: #ff8000;
+        display: block;
+        color: #ffffff;
+        border: 1px solid darken(#ccc, 5%);
+        border-radius: 3px;
+        width: 100%;
+        margin-top: 15px;
+        padding: 10px;
+        font-size: 18px;
+        cursor: pointer;
+        &:hover {
+          background-color: darken(#ccc, 3%);
+        }
+      }
+    }
+    a {
+      text-decoration: none;
+      color: #848484;
+      p {
+        text-align: center;
+        margin-top: 15px;
+      }
+    }
+  }
+}
+
+//サインインページ(sign_in.html.erb)
+.page-container {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 75%;
+  .sign-in-container {
+    width: 45%;
+    background-color: white;
+    padding: 20px;
+    margin-right: 10px;
+    input[type="email"], input[type="password"]{
+      width: 100%;
+    }
+    label {
+      font-weight: bold;
+    }
+    .user_email_wrap {
+      margin-bottom: 15px;
+    }
+    .user_password_wrap {
+      margin-bottom: 15px;
+    }
+    .user_btn_wrap {
+      text-align: center;
+      input[type="submit"] {
+        background-color: #ff8000;
+        display: block;
+        color: #ffffff;
+        border: 1px solid darken(#ccc, 5%);
+        border-radius: 3px;
+        width: 100%;
+        margin-top: 15px;
+        padding: 10px;
+        font-size: 18px;
+        cursor: pointer;
+        &:hover {
+          background-color: darken(#ccc, 3%);
+        }
+      }
+    }
+    a {
+      text-decoration: none;
+      color: #848484;
+      p {
+        text-align: center;
+        margin-top: 15px;
+      }
+    }
+  }
+}
+
+// 新規出品ページ(products/new.html.erb)
+.page-container {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 75%;
+  .new_product_wrap {
+    width: 45%;
+    background-color: white;
+    border: textareapx solid #eee;
+    padding: 20px;
+    h1 {
+      font-size: 24px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    textarea {
+      width: 100%;
+      height: 70px;
+    }
+    //商品名と値段
+    input[type="text"] {
+      width: 100%;
+    }
+    //newページのlabel全部
+    label {
+      font-weight: bold;
+    }
+    // 商品名
+    .name_wrap {
+      margin-bottom: 15px;
+    }
+    // 説明文
+    .textarea_wrap {
+      margin-bottom: 15px;
+    }
+    // カテゴリ
+    .category_wrap {
+      margin-bottom: 15px;
+      select {
+        width: 100%;
+      }
+    }
+    // カテゴリ
+    .price_wrap {
+      margin-bottom: 15px;
+    }
+      // ファイル選択ボタン
+    .file_wrap {
+      input[type="file"] {
+        margin-bottom: 5px;
+      }
+    }
+    // ボタン
+    .btn_wrap {
+      text-align: center;
+      input[type="submit"] {
+        background-color: #ff8000;
+        display: block;
+        color: #ffffff;
+        border: 1px solid darken(#ccc, 5%);
+        border-radius: 3px;
+        width: 100%;
+        margin-top: 15px;
+        padding: 10px;
+        font-size: 18px;
+        cursor: pointer;
+        &:hover {
+          background-color: darken(#ccc, 3%);
+        }
+      }
+    }
+  }
+}
+
+//各Userのプロフィール画面（profiles/show.html.erb）
+.page-container {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 75%;
+  .profile {
+    background-color: white;
+    width: 45%;
+    .profile_image {
+      padding: 16px;
+      padding-left: 20px;
+      .image {
+        background-position: center;
+        background-size: cover;
+        top: 10px;
+        left: 10px;
+        width: 200px;
+        height: 200px;
+      }
+    }
+    .status {
+      padding: 20px;
+      padding-left: 20px;
+      h1 {
+        margin-bottom: 10px;
+      }
+      .post_count {
+        margin-bottom: 30px;
+        a {
+          text-decoration: none;
+        }
+      }
+      .profile {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+//プロフィール編集ページ(profiles/edit.html.erb)
+.page-container {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 75%;
+  .profile-edit-container {
+    width: 45%;
+    background-color: white;
+    border: textareapx solid #eee;
+    padding: 20px;
+    textarea {
+      width: 100%;
+      height: 50px;
+    }
+    //User名とメールアドレス
+    input[type="text"] {
+      width: 100%;
+    }
+    //editページのlabel全部
+    label {
+      font-weight: bold;
+    }
+    // User名,コメント
+    .user_name_wrap, .user_email_wrap, .user_textarea_wrap  {
+      margin-bottom: 15px;
+    }
+    // ファイル選択ボタン
+    .file_wrap {
+      input[type="file"] {
+        margin-bottom: 5px;
+      }
+    }
+    // ボタン
+    .user_btn_wrap {
+      text-align: center;
+      input[type="submit"] {
+        background-color: #ff8000;
+        display: block;
+        color: #ffffff;
+        border: 1px solid darken(#ccc, 5%);
+        border-radius: 3px;
+        width: 100%;
+        margin-top: 15px;
+        padding: 10px;
+        font-size: 18px;
+        cursor: pointer;
+        &:hover {
+          background-color: darken(#ccc, 3%);
+        }
+      }
+    }
+  }
+}
+
+//出品商品ページ(products/index.html.erb)
+.page-container {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 75%;
+  .items-box-container {
+    width: 50%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    .items-box-content {
+      display: flex;
+      flex-direction: column;
+      background-color: white;
+      a {
+        display: block;
+      }
+      .items-box-photo {
+        .soldout img {
+          position: absolute;
+          top: 15px;
+          right: 15px;
+        }
+      }
+    }
+  }
+}
+
+//商品詳細ページ(products/show.html.erb)
+.item-box-container {
+  background-color: white;
+  .status-box {
+    margin: 10px 10px 0px 10px;
+    padding: 5px 0px 5px 0px;
+    border: solid 3px #ffbf00;/*線*/
+    border-radius: 10px;/*角の丸み*/
+    .status {
+      text-align: center;
+    }
+  }
+  .product-name {
+    text-align: center;
+    padding: 15px;
+  }
+  .item-image-container {
+    display: flex;
+    flex-direction: row;
+    .item-image-1 {
+      padding: 10px 5px 10px 15px;
+    }
+    .item-image-2 {
+      padding: 10px 5px 10px 5px;
+    }
+    .item-image-3 {
+      padding: 10px 15px 10px 5px;
+    }
+  }
+  .price {
+    padding: 10px 15px;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  .category, .margin, .profit {
+    padding: 5px 15px;
+    font-size: 14px;
+    font-weight: lighter;
+    color: grey;
+  }
+  .comment-box {
+    padding: 10px 15px;
+  }
+  .btn_wrap {
+    text-align: center;
+    padding: 0px 15px 10px 15px;
+    .btn {
+      text-decoration: none;
+      background-color: #ff8000;
+      display: block;
+      color: #ffffff;
+      border: 1px solid darken(#ccc, 5%);
+      border-radius: 3px;
+      margin-top: 15px;
+      padding: 10px;
+      font-size: 18px;
+      cursor: pointer;
+      &:hover {
+        background-color: darken(#ccc, 3%);
+      }
+    }
+  }
+  .dele-btn {
+    padding: 5px 0px 15px 15px;
+  }
+}
+
+//商品編集ページ(products/edit.html.erb)
+.page-container {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 75%;
+  .edit-product-wrap {
+    background-color: white;
+    width: 45%;
+    background-color: white;
+    border: textareapx solid #eee;
+    padding: 20px;
+    textarea {
+      width: 100%;
+      height: 70px;
+    }
+    //商品名と値段
+    input[type="text"] {
+      width: 100%;
+    }
+    //editページのlabel全部
+    label {
+      font-weight: bold;
+    }
+    // 商品名
+    .name_wrap {
+      margin-bottom: 15px;
+    }
+    // 説明文
+    .textarea_wrap {
+      margin-bottom: 15px;
+    }
+    // カテゴリ
+    .category_wrap {
+      margin-bottom: 15px;
+      select {
+        width: 100%;
+      }
+    }
+    // カテゴリ
+    .price_wrap {
+      margin-bottom: 15px;
+    }
+      // ファイル選択ボタン
+    .file_wrap {
+      input[type="file"] {
+        margin-bottom: 5px;
+      }
+    }
+    // ボタン
+    .btn_wrap {
+      text-align: center;
+      input[type="submit"] {
+        background-color: #ff8000;
+        display: block;
+        color: #ffffff;
+        border: 1px solid darken(#ccc, 5%);
+        border-radius: 3px;
+        width: 100%;
+        margin-top: 15px;
+        padding: 10px;
+        font-size: 18px;
+        cursor: pointer;
+        &:hover {
+          background-color: darken(#ccc, 3%);
+        }
+      }
+    }
+  }
+}

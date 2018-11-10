@@ -1,0 +1,34 @@
+<div class="page-container">
+  <div class="item-box-container">
+    <div class="status-box">
+      <p class="status"><%= @product.status_i18n %></p>
+    </div>
+    <h1 class="product-name"><%= @product.name %></h1>
+    <div class="item-image-container">
+      <div class="item-image-1">
+        <%= image1_url(@product) %>
+      </div>
+      <div class="item-image-2">
+        <%= image2_url(@product) %>
+      </div>
+      <div class="item-image-3">
+        <%= image3_url(@product) %>
+      </div>
+    </div>
+    <p class="category">カテゴリー: <%= @product.category.name %></p>
+    <h2 class="price">\<%= number_with_delimiter(@product.price) %></h2>
+    <p class="margin">販売手数料(10%): \<%= number_with_delimiter(@margin) %></p>
+    <p class="profit">販売利益: \<%= number_with_delimiter(@profit) %></p>
+    <div class="comment-box">
+      <%= @product.description %>
+    </div>
+    <div class="btn_wrap">
+    <!-- 編集ボタン edit_users_product_pathへのリンク-->
+    <%= link_to "編集する", edit_users_product_path, class: "btn btn-default" %>
+    </div>
+    <div class="dele-btn">
+    <%= button_to "削除する", {controller: 'users/products', action: 'destroy'}, {method: :delete} %>
+    </div>
+  </div>
+  <%= render partial: 'my_menu', locals: {user: @user} %>
+</div>

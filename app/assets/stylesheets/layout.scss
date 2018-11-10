@@ -1,0 +1,224 @@
+// サインイン後のbody
+body.default {
+  background-color: #FBF8EF;
+  padding-top: 100px;
+}
+
+// ヘッダー部分
+.global_header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 80px;
+  background-color: white;
+  border-bottom: 1px solid #eee;
+  padding: 0 30px;
+  z-index: 100;
+  opacity: 0.95;
+  >* {
+    line-height: 80px;
+    cursor: pointer;
+  }
+  .header-wrap {
+    display: flex;
+    justify-content:space-between;
+    width: 50%;
+    margin: 0 auto;
+    a {
+      text-decoration: none;
+    }
+    .logo {
+      width: 280px;
+      font-size: 32px;
+      text-align: left;
+      margin-bottom: 20px;
+      font-family: cursive;
+      color: #777;
+      span {
+        color: #ff8c00;
+      }
+    }
+    .search {
+      width: 250px;
+      min-width: 100px;
+      input[type="text"] {
+        border: solid 1px #dbdbdb;
+        border-radius: 20px;
+        color: #262626;
+        font-size: 14px;
+        outline: none;
+        padding: 3px 10px 3px 10px;
+        background-color: #FFF8DC;
+        height: 30px;
+        display: inline-block;
+        width: 100%;
+      }
+    }
+    .menu {
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      .button {
+        margin-left: 10px;
+        input[type="submit"] {
+          margin-top: 25px;
+          padding: 5px;
+          background-color: #ff8c00;
+          display: block;
+          color: #ffffff;
+          border: 1px solid #ff8c00;
+          border-radius: 5px;
+          cursor: pointer;
+          &:hover {
+            background-color: darken(#ccc, 3%);
+          }
+        }
+        a {
+          display: block;
+          padding: 0 20px;
+        }
+      }
+      .profile {
+        a {
+          display: block;
+          i {
+            color: #ff8c00;
+            font-size: 40px;
+            margin-top: 18px;
+            p {
+              font-size: 8px;
+              font-weight: bold;
+            }
+            cursor: pointer;
+            &:hover {
+              background-color: darken(#ccc, 3%);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+//フッター部分
+.global_footer {
+  top: 0;
+  left: 0;
+  height: 80px;
+  background-color: white;
+  border-top: 1px solid #eee;
+  padding: 0 30px;
+  margin-top: 20px;
+  .footer_menu {
+    display: flex;
+    list-style: none;
+    padding-top: 20px;
+    margin: 0 auto;
+    width: 50%;
+    li {
+      font-size: 11px;
+      color: grey;
+      padding-right: 30px;
+    }
+  }
+}
+
+// 詳細検索テンプレート（_search_menu.html.erb）
+.search_menu_container {
+  background-color: white;
+  width: 17%;
+  margin-left: 10px;
+  h1 {
+    font-weight: bold;
+    padding: 20px;
+    margin-bottom: 5px;
+  }
+  .search_menu {
+    padding-left: 15px;
+    padding-right: 15px;
+    .keyword_wrap {
+      padding-bottom: 10px;
+      input[type="text"] {
+        width: 100%;
+      }
+    }
+    .category_wrap {
+      padding-bottom: 10px;
+    }
+    .price_wrap {
+      padding-bottom: 10px;
+      input[type="text"] {
+        width: 42%;
+      }
+    }
+    .order_wrap {
+      padding-bottom: 10px;
+      #order_status {
+        width: 100%;
+      }
+    }
+    .status_wrap {
+      padding-bottom: 10px;
+      #sort_status {
+        width: 100%;
+      }
+    }
+    .btn_wrap {
+      padding-bottom: 20px;
+    }
+  }
+}
+
+//マイメニューテンプレート (_my_menu.html.erb)
+.menu_container {
+  background-color: white;
+  width: 150px;
+  margin-left: 30px;
+  h1 {
+    font-weight: bold;
+    padding: 10px;
+    margin-bottom: 5px;
+  }
+  .my_menus {
+    padding-left: 10px;
+    li {
+      padding-bottom: 10px;
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+// アラート
+.alert {
+  position: fixed;
+  background-color: #fff;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 40px;
+  text-align: center;
+  z-index: 1000;
+  line-height: 40px;
+  &-success, &-notice {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+  }
+  &-info {
+    color: #31708f;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+  }
+  &-warning {
+    color: #8a6d3b;
+    background-color: #fcf8e3;
+    border-color: #faebcc;
+  }
+  &-danger{
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+  }
+}

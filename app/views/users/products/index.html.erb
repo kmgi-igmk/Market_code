@@ -1,0 +1,26 @@
+<div class="page-container">
+  <% if @products.any? %>
+  <section class="items-box-container">
+  <% @products.each do |product| %>
+    <div class="items-box-content">
+      <%= link_to users_product_path(product) do %>
+      <div class="items-box-photo">
+        <% if product.status == "soldout" %>
+          <div class="soldout"><%= image_tag("soldout.png") %></div>
+        <% end %>
+        <%= image1_url(product) %>
+      </div>
+      <% end %>
+      <div class="items-box-body">
+        <h3><%= product.name %></h3>
+          <div class="items-box-price">\<%= number_with_delimiter(product.price) %></div>
+          <p class="item-box-tax">(税込)</p>
+      </div>
+    </div>
+  <% end %>
+  <% else %>
+  <p class="empty">出品中の商品がありません。</p>
+  <% end %>
+  </section>
+    <%= render partial: 'my_menu' %>
+</div>

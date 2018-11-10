@@ -1,0 +1,21 @@
+<div class="page-container">
+  <div class="sign-in-container">
+    <%= form_for(@user, url: {controller: :users, action: :sign_in_process}) do |f| %>
+      <div class="user_email_wrap">
+        <%= f.label :email, "メールアドレス" %><br>
+        <%= f.email_field :email, placeholder: "メールアドレス" %>
+        </div>
+      <div class="user_password_wrap">
+        <%= f.label :email, "パスワード" %><br>
+        <%= f.password_field :password, placeholder: "８文字以上の英数字" %>
+      </div>
+      <div class="user_btn_wrap">
+        <%= f.submit "サインインする" %>
+      </div>
+    <% end %>
+    <%= link_to sign_up_path do %>
+      <p>新規登録はこちらから</p>
+    <% end %>
+  </div>
+  <%= render partial: 'search_menu' %>
+</div>

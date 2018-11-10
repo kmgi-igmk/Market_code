@@ -1,0 +1,20 @@
+<div class="page-container">
+  <div class="profile">
+    <div class="profile_image">
+      <div class="image">
+        <%= user_image_url(@user) %>
+      </div>
+    </div>
+    <div class="status">
+      <h1><%= @user.name %></h1>
+      <div class="post_count">
+        <%= link_to "出品数#{number_with_delimiter(@user.products.length)}件", users_products_path %>
+      </div>
+      <div class="profile">
+        <%= @user.profile %>
+      </div>
+    </div>
+  </div>
+  <!-- 部分テンプレート呼び出し。-->
+  <%= render partial: 'my_menu' %>
+</div>

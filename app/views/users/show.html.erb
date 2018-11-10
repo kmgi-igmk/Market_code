@@ -1,0 +1,28 @@
+<div class="page-container">
+  <% if @products.any? %>
+  <section class="items-box-container">
+  <% @products.each do |product| %>
+    <div class="items-box-content">
+      <%= link_to markets_show_path(product) do %>
+      <div class="items-box-photo">
+        <%= image_tag product.image1_url %>
+      </div>
+      <% end %>
+      <div class="items-box-body">
+        <h3><%= product.name %></h3>
+        <p class="items-box-price">\<%= number_with_delimiter(product.price) %></p>
+        <p class="items-box-tax">(税込)</p>
+        <div class="items-box-favorite">
+          <%= link_to create_favorite_path(product) do %>
+          <i class="fa <%= product.favorite?(current_user)? "fa-star": "fa-star-o" %>"></i>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  <% else %>
+  <p class="empty">お気に入りはありません。</p>
+  <% end %>
+  </section>
+    <%= render partial: 'my_menu', locals: {user: @user} %>
+</div>

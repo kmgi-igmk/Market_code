@@ -1,0 +1,46 @@
+<div class="page-container">
+  <div class="edit-product-wrap">
+    <%= form_for [:users, @product], html: { class: 'p-product c-generalForm_form', multipart: true } do |f| %>
+      <!-- 商品名 -->
+      <div class="name_wrap">
+        <%= f.label :name, "商品名" %><br>
+        <%= f.text_field :name %>
+      </div>
+      <!-- 説明文 -->
+      <div class="textarea_wrap">
+        <%= f.label :name, "説明" %><br>
+        <%= f.text_area :description %>
+      </div>
+      <!-- カテゴリ（初期値は現在の値）-->
+      <div class="category_wrap">
+        <%= f.label :name, "カテゴリー" %><br>
+        <%= f.collection_select :category_id, Category.all, :id, :name %>
+      </div>
+      <!-- 値段 -->
+      <div class="price_wrap">
+        <%= f.label :name, "値段" %><br>
+        <%= f.text_field :price %>
+      </div>
+      <!-- ファイル選択ボタン -->
+      <div class="file_wrap">
+        <%= f.label :name, "画像1枚目" %>
+        <%= f.file_field :image1 %><br>
+        <%= f.label :name, "画像2枚目" %>
+        <%= f.file_field :image2 %><br>
+        <%= f.label :name, "画像3枚目" %>
+        <%= f.file_field :image3 %><br>
+      </div>
+      <% if @product.status == "soldout" %>
+      <div class="resell_wrap">
+        <%= f.check_box :status, {}, "selling", "soldout" %>
+        <%= f.label :status, "再販する" %>
+      </div>
+      <% end %>
+      <!-- 送信ボタン -->
+      <div class="btn_wrap">
+        <%= f.submit "編集完了する" %>
+      </div>
+    <% end %>
+  </div>
+  <%= render partial: 'my_menu' %>
+</div>

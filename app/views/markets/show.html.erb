@@ -1,0 +1,29 @@
+<div class="page-container">
+  <div class="item-box-container">
+    <h1 class="market-product-name"><%= @product.name %></h1>
+    <div class="item-image-container">
+      <div class="item-image-1">
+        <%= image1_url(@product) %>
+      </div>
+      <div class="item-image-2">
+        <%= image2_url(@product) %>
+      </div>
+      <div class="item-image-3">
+        <%= image3_url(@product) %>
+      </div>
+    </div>
+    <p class="category">カテゴリー: <%= @product.category.name %></p>
+    <h2 class="price">\<%= number_with_delimiter(@product.price) %></h2>
+    <div class="comment-box">
+      <%= @product.description %>
+    </div>
+    <!-- その商品が出品中かつ、出品したUserではない場合に購入ボタンを表示する -->
+    <% if @product.status == "selling" && current_user.id != @product.user_id %>
+    <div class="btn_wrap">
+    <!-- 購入ボタン payment_pathへのリンク-->
+      <%= link_to "購入する", payment_path, class: "btn btn-default" %>
+    </div>
+    <% end %>
+  </div>
+  <%= render partial: 'search_menu' %>
+</div>

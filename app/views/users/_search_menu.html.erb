@@ -1,0 +1,33 @@
+<div class="search_menu_container">
+  <h1>詳細検索</h1>
+  <div class="search_menu">
+    <%= form_tag(markets_index_path, method: :get) do %>
+      <div class="keyword_wrap">
+        <!-- nilを入れないとplaceholderがvalueの位置に入ってしまう -->
+        <%= label_tag :キーワード検索 %>
+        <%= text_field_tag :keyword, nil, placeholder: "例：値上げ" %>
+      </div>
+      <div class="category_wrap">
+        <%= label_tag :カテゴリー検索 %>
+        <%= collection_select Category, :category_id, Category.all, :id, :name, :include_blank => ""  %>
+      </div>
+      <div class="price_wrap">
+        <%= label_tag :価格検索 %><br>
+        <%= text_field_tag :mini_price, nil, placeholder: '100' %>~
+        <%= text_field_tag :max_price, nil, placeholder: '1000' %>
+      </div>
+      <div class="order_wrap">
+        <%= label_tag :並べ替え %><br>
+        <%= select :order, :status, [["値段が安い順", "price_order_ascend"], ["値段が高い順", "price_order_descend"], ["新しい順", "created_at_descend"], ["古い順", "created_at_ascend"]], :include_blank => "" %>
+      </div>
+      <!-- 出品中、売切をselectでソート-->
+      <div class="status_wrap">
+        <%= label_tag :商品ステータス選択 %><br>
+        <%= select :sort, :status, [["出品中", "selling"], ["売切", "soldout"]], :include_blank => "" %>
+      </div>
+      <div class="btn_wrap">
+        <%= submit_tag value="検索" %>
+      </div>
+    <% end %>
+  </div>
+</div>

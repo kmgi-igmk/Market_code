@@ -1,0 +1,37 @@
+<div class="page-container">
+  <div class="sign-up-container">
+    <%= form_for @user, url: sign_up_path do |f| %>
+      <% if @user.errors.any? %>
+        <ul class="errors">
+          <% @user.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      <% end %>
+
+      <div class="field">
+        <label>ニックネーム</label><br>
+        <%= f.text_field :name, placeholder: "五木ひろし" %>
+      </div>
+      <div class="field">
+        <label>メールアドレス</label><br>
+        <%= f.email_field :email, placeholder: "メールアドレス" %>
+      </div>
+      <div class="field">
+        <label>パスワード</label><br>
+        <%= f.password_field :password, placeholder: "８文字以上の英数字" %>
+      </div>
+      <div class="field">
+        <label>パスワード（確認用）</label><br>
+        <%= f.password_field :password_confirmation, placeholder: "確認用" %>
+      </div>
+      <div class="user_btn_wrap">
+        <%= f.submit "新規登録する" %>
+      </div>
+    <% end %>
+    <%= link_to sign_in_path do %>
+      <p>アカウントをお持ちの方はこちらへ</p>
+    <% end %>
+  </div>
+  <%= render partial: 'search_menu' %>
+</div>

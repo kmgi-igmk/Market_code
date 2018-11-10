@@ -1,0 +1,22 @@
+<div class="page-container">
+  <div class="item-box-container">
+    <h1 class="market-product-name"><%= @product.name %></h1>
+    <div class="item-image-container">
+      <div class="item-image-1">
+        <%= image_tag @product.image1_url %>
+      </div>
+      <div class="item-image-2">
+        <%= image2_url(@product) %>
+      </div>
+      <div class="item-image-3">
+        <%= image3_url(@product) %>
+      </div>
+    </div>
+    <h2 class="price">\<%= number_with_delimiter(@product.price) %></h2>
+    <!-- 購入確定ボタン。 payment_process_pathへ-->
+    <div class="btn_wrap">
+      <%= link_to "購入を確定する", payment_process_path, method: :post, class: "btn btn-default" %>
+    </div>
+  </div>
+  <%= render partial: 'search_menu' %>
+</div>
